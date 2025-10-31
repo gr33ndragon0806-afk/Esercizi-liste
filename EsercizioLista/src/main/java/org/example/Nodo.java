@@ -2,17 +2,17 @@ package org.example;
 
 public class Nodo {
 
-    public int info;
-    public Nodo next;
+    private int info;
+    private Nodo next;
 
 
 
-    public Nodo() {
+    public Nodo() { //Nodo puntatore per l'inizio
         this.info = 0;
         this.next = null;
     }
 
-    public Nodo(int info) {
+    public Nodo(int info) { //Nodo finale
         this.info = info;
         this.next = null;
     }
@@ -22,13 +22,33 @@ public class Nodo {
         this.next = next;
     }
 
-
     public int getInfo() { return info; }
 
-    public Nodo getNext() { return info; }
+    public void setInfo(int num) {
+        info = num;
+    }
+
+    public Nodo getNext() { return next; }
 
     public void setNext(Nodo link) {
         next = link;
     }
+
+
+
+    @Override
+    public String toString (){
+
+        String q = "[";
+
+        if (next != null) {
+
+            return q + info + "]->" + next;
+        }else {
+
+            return q + info + "]->NULL" ;
+        }
+    }
+
 
 }
